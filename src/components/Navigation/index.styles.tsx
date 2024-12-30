@@ -29,15 +29,16 @@ export const DrawerList = styled(List)(({ theme }) => ({
 
 export const NavLink = styled(Typography)(({ theme }) => ({
   cursor: 'pointer',
-  color: theme.palette.text.primary,
+  color: theme.palette.textColor.primary,
   '&:hover': {
     textDecoration: 'underline',
+    color: theme.palette.secondary.main,
   },
 }));
 
 export const DrawerNavLink = styled(Typography)(({ theme }) => ({
   cursor: 'pointer',
   '&:hover': {
-    color: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
   },
 }));

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Toolbar, Typography, Drawer, ListItem, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,7 +10,7 @@ import {
   NavLink,
   DrawerNavLink,
 } from './index.styles';
-import useIsMobile from '../hooks/useIsMobile';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const ResponsiveNavbar: React.FC = () => {
   const isMobile = useIsMobile(); // Custom hook to determine if it's mobile view
