@@ -1,16 +1,20 @@
+// src/theme.ts
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#6d6353',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#7c7364',
     },
-  },
-  typography: {
-    fontFamily: 'Roboto, sans-serif',
+    background: {
+      default: '#f5f5f5',
+    },
+    text: {
+      primary: '#ffffff',
+    },
   },
 });
 
