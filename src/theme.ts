@@ -1,43 +1,60 @@
-// src/theme.ts
 import { createTheme, ThemeOptions, Theme } from '@mui/material/styles';
 
 declare module "@mui/material/styles" {
   interface Palette {
     tertiary: Palette["primary"];
-  }
-  interface PaletteOptions {
-    tertiary?: PaletteOptions["primary"];
-  }
-
-  interface Palette {
     textColor: {
       primary: string
       secondary: string
       white: string
     };
-  }
-  interface PaletteOptions {
-    textColor?: {
-      primary: string
-      secondary: string
-      white: string
-    };
-  }
-
-  interface Palette {
     socialMedia: {
       instagram: string,
       facebook: string,
       twitter: string,
       linkdin: string
     };
+    serviceCard: {
+      red: string
+      yellow: string
+      pink: string
+      green: string
+      blue: string
+      purple: string
+      darkRed: string
+      darkYellow: string
+      darkPink: string
+      darkGreen: string
+      darkBlue: string
+      darkPurple: string
+    }
   }
   interface PaletteOptions {
+    tertiary?: PaletteOptions["primary"];
+    textColor?: {
+      primary: string
+      secondary: string
+      white: string
+    };
     socialMedia?: {
       instagram: string
       facebook: string
       twitter: string
       linkdin: string
+    };
+    serviceCard?: {
+      red: string
+      yellow: string
+      pink: string
+      green: string
+      blue: string
+      purple: string
+      darkRed: string
+      darkYellow: string
+      darkPink: string
+      darkGreen: string
+      darkBlue: string
+      darkPurple: string
     }
   }
 }
@@ -67,6 +84,20 @@ const theme: Theme = createTheme({
       secondary: '#989898',
       white: '#fff'
     },
+    serviceCard: {
+      red: '#f6d5d3',
+      yellow: '#fff4d7',
+      pink: '#f2d7e5',
+      green: '#daefef',
+      blue: '#d4ddee',
+      purple: '#e6dff6',
+      darkRed: '#c92728',
+      darkYellow: '#ffcd00',
+      darkPink: '#b6317a',
+      darkGreen: '#8ed2ce',
+      darkBlue: '#2658aa',
+      darkPurple: '#8060ce'
+    }
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',

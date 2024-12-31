@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   textAlign: "left",
-  padding: theme.spacing(11, 1, 7, 7),
+  padding: theme.spacing(11, 1, 0, 7),
 }));
 
 export const Grid2Wrapper = styled(Grid2)(({ theme }) => ({
