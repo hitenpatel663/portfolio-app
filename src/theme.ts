@@ -7,6 +7,8 @@ declare module "@mui/material/styles" {
       primary: string
       secondary: string
       white: string
+      gray: string
+      grayLight: string
     };
     socialMedia: {
       instagram: string,
@@ -35,6 +37,8 @@ declare module "@mui/material/styles" {
       primary: string
       secondary: string
       white: string
+      gray: string
+      grayLight: string
     };
     socialMedia?: {
       instagram: string
@@ -82,7 +86,9 @@ const theme: Theme = createTheme({
     textColor: {
       primary: '#49494b',
       secondary: '#989898',
-      white: '#fff'
+      white: '#fff',
+      gray: '#a8a8a9',
+      grayLight: '#e5e5e5'
     },
     serviceCard: {
       red: '#f6d5d3',
