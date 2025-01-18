@@ -23,7 +23,7 @@ export const HamburgerMenu = styled(IconButton)(({ theme }) => ({
 
 export const DrawerList = styled(List)(({ theme }) => ({
   width: '250px',
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.palette.bg.main,
   height: '100%',
 }));
 

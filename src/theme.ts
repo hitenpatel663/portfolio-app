@@ -3,6 +3,7 @@ import { createTheme, ThemeOptions, Theme } from '@mui/material/styles';
 declare module "@mui/material/styles" {
   interface Palette {
     tertiary: Palette["primary"];
+    bg: Palette["primary"];
     textColor: {
       primary: string
       secondary: string
@@ -33,6 +34,7 @@ declare module "@mui/material/styles" {
   }
   interface PaletteOptions {
     tertiary?: PaletteOptions["primary"];
+    bg?: PaletteOptions["primary"];
     textColor?: {
       primary: string
       secondary: string
@@ -69,13 +71,15 @@ const theme: Theme = createTheme({
       main: '#f5f6fa',
     },
     secondary: {
-      main: '#2fb3ae',
+      main: '#f59e0b',
+      light: '#fef1e0'
     },
     tertiary: {
-      main: '#1c2e50',
+      main: '#161c2d',
     },
-    background: {
-      default: '#f5f6fa',
+    bg: {
+      main: '#f5f6fa',
+      
     },
     socialMedia: {
       instagram: '#b7347c',

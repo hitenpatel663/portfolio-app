@@ -1,4 +1,5 @@
 import "./App.css";
+import { AboutMe } from "./components/AboutMe";
 import { ContactUs } from "./components/ContactUs";
 import { HeroSection } from "./components/HeroSection";
 import Navigation from "./components/Navigation";
@@ -11,6 +12,7 @@ function App() {
     <>
       <Navigation />
       <HeroSection />
+      <AboutMe />
       <Service />
       <Works />
       <Testimonial />

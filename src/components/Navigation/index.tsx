@@ -30,7 +30,7 @@ const ResponsiveNavbar: React.FC = () => {
         )}
 
         <Typography variant="h6" component="div">
-          MyApp
+          Hiten.
         </Typography>
 
         {!isMobile && (
