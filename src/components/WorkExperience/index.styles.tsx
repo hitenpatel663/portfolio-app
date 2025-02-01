@@ -30,8 +30,16 @@ export const StepDot = styled(Box)(({ theme }) => ({
 export const Title = styled(Typography)(({ theme }) => ({
   color: theme.palette.tertiary.main,
   fontWeight: 600,
-  marginTop: theme.spacing(1.5),
+  marginTop: theme.spacing(0),
   fontSize: theme.spacing(2),
+}));
+
+export const JobTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.textColor.primary,
+  fontWeight: 600,
+  marginTop: theme.spacing(0),
+  fontSize: theme.spacing(2),
+  textAlign: 'left',
 }));
 
 export const JobDescription = styled(Typography)(({ theme }) => ({

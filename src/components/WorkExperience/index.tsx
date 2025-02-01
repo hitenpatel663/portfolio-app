@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import {
   JobDescription,
+  JobTitle,
   SectionWrapper,
   StepBox,
   StepDot,
@@ -50,7 +51,7 @@ const WorkExperience: React.FC = () => {
             </StepLabel>
             <StepContent>
               <Box>
-                <Title variant="h6">{exp.jobTitle}</Title>
+                <JobTitle variant="h6">{exp.jobTitle}</JobTitle>
                 <JobDescription variant="body1">
                   {exp.description}
                 </JobDescription>
