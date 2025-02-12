@@ -63,3 +63,12 @@ export const IconValueBox = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: theme.spacing(2),
 }));
+
+export const ValueBox =  styled(Typography)(({ theme }) => ({
+  color: theme.palette.textColor.gray,
+  fontWeight: 400,
+  fontSize: theme.spacing(2),
+  width: "60%",
+  textAlign: "left",
+  marginLeft: theme.spacing(5),
+}));

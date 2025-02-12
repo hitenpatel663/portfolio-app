@@ -9,7 +9,18 @@ import {
   Title,
 } from "./index.styles";
 import EastIcon from "@mui/icons-material/East";
-import { Chip } from "@mui/material";
+import {
+  Backdrop,
+  Chip,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Modal,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import { useState } from "react";
 
 export const ProjectCard = ({
   imgUrl,
@@ -22,23 +33,51 @@ export const ProjectCard = ({
   description: string;
   skills: string[];
 }) => {
+  const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
-    <Card>
-      <ImageContainer src={imgUrl} />
-      <BottomBox>
+    <>
+      <ImageContainer src={imgUrl} onClick={handleClickOpen} />
+
+      <Dialog
+        fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        maxWidth={'lg'}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle id="responsive-dialog-title">
         <Title>{title}</Title>
-        <ProjectDetail>
-          <Description>{description}</Description>
-          <IconBox>
-            <EastIcon color="primary" />
-          </IconBox>
-        </ProjectDetail>
-        <ChipBox>
-          {skills?.map((skillItem) => (
-            <Chip label={skillItem} />
-          ))}
-        </ChipBox>
-      </BottomBox>
-    </Card>
+        </DialogTitle>
+        <DialogContent>
+          <Card>
+            <ImageContainer src={imgUrl} onClick={handleClickOpen} />
+            <BottomBox>
+              <Title>{title}</Title>
+              <ProjectDetail>
+                <Description>{description}</Description>
+                <IconBox>
+                  <EastIcon color="primary" />
+                </IconBox>
+              </ProjectDetail>
+              <ChipBox>
+                {skills?.map((skillItem) => (
+                  <Chip label={skillItem} />
+                ))}
+              </ChipBox>
+            </BottomBox>
+          </Card>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };

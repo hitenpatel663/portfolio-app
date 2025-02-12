@@ -9,6 +9,7 @@ import {
   Title,
 } from "./index.styles";
 import { isEmpty } from "lodash";
+import { SecondaryButton } from "../../common/common.styles";
 
 export const ContactForm = () => {
   return (
@@ -78,9 +79,9 @@ export const ContactForm = () => {
               error={!isEmpty(props?.errors?.message)}
               helperText={props?.errors?.message}
             />
-            <SubmitMessageButton onClick={() => props?.submitForm()}>
+            <SecondaryButton onClick={() => props?.submitForm()}>
               Submit
-            </SubmitMessageButton>
+            </SecondaryButton>
           </SectionWrapper>
         </Form>
       )}

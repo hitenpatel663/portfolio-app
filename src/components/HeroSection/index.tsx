@@ -7,15 +7,11 @@ import {
   RightContainer,
   RightContainerDark,
   SectionWrapper,
-  HireMe,
   ButtonWrapper,
-  SeeMyWork,
 } from "./index.styles";
 import TypewriterComponent from "typewriter-effect";
-import EastIcon from '@mui/icons-material/East';
-
 import SocialMediaLinks from "../SocialMediaLinks";
-import hitenImg from "../../assets/hiten.png";
+import { PrimaryButton, SecondaryButton } from "../../common/common.styles";
 
 export const HeroSection = () => {
   return (
@@ -39,8 +35,8 @@ export const HeroSection = () => {
           </Description>
           <SocialMediaLinks />
           <ButtonWrapper>
-          <HireMe>Hire Me</HireMe>
-          <SeeMyWork>See My work</SeeMyWork>
+            <PrimaryButton>Hire Me</PrimaryButton>
+            <SecondaryButton>See My work</SecondaryButton>
           </ButtonWrapper>
         </SectionWrapper>
       </Grid2Container>

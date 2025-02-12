@@ -9,7 +9,7 @@ import { styled } from "@mui/material/styles";
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
-  background: theme.palette.textColor.white,
+  background: theme.palette.primary.main,
   width: "100%",
   textAlign: "left",
   display: "flex",
@@ -17,6 +17,9 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
   gap: theme.spacing(3.5),
   borderRadius: "30px",
   borderLeft: `8px solid ${theme.palette.secondary.main}`,
+  borderRight: `1px solid ${theme.palette.secondary.main}`,
+  borderTop: `1px solid ${theme.palette.secondary.main}`,
+  borderBottom: `1px solid ${theme.palette.secondary.main}`,
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
@@ -32,21 +35,22 @@ export const Heading = styled(Typography)(({ theme }) => ({
 }));
 
 export const TextFieldComp = styled(TextField)(({ theme }) => ({
+  background: theme.palette.bg.main,
   "& label.Mui-focused": {
     color: theme.palette.tertiary.main,
   },
   "& .MuiInput-underline:after": {
-    borderBottomColor: theme.palette.tertiary.main,
+    borderBottomColor: theme.palette.secondary.main,
   },
   "& .MuiOutlinedInput-root": {
     ".MuiOutlinedInput-notchedOutline ": {
-      borderColor: theme.palette.textColor.grayLight,
+      borderColor: theme.palette.secondary.main,
     },
     "&:hover fieldset": {
-      borderColor: theme.palette.tertiary.main,
+      borderColor: theme.palette.secondary.main,
     },
     "&.Mui-focused fieldset": {
-      borderColor: theme.palette.tertiary.main,
+      borderColor: theme.palette.secondary.main,
     },
   },
 }));

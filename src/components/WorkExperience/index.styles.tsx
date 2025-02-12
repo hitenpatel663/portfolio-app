@@ -1,9 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(1),
-  width: "100%",
+export const ExperienceWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'left',
+  width: '100%',
 }));
 
 export const StepBox = styled(Box)(({ theme }) => ({

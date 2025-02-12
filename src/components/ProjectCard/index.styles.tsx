@@ -12,14 +12,13 @@ export const Card = styled(Box)(({ theme }) => ({
 }));
 
 export const ImageContainer = styled("img")(({ theme }) => ({
-  padding: theme.spacing(3),
   width: "100%",
-  height: "400px",
+  height: "300px",
   textAlign: "left",
   display: "flex",
   flexDirection: "column",
   background: theme.palette.textColor.white,
-  borderRadius: "30px",
+  borderRadius: '10px',
 }));
 
 export const BottomBox = styled(Box)(({ theme }) => ({
@@ -38,7 +37,7 @@ export const IconBox = styled(Button)(({ theme }) => ({
   height: "50px",
   width: "50px",
   minWidth: "50px",
-  background: `${theme.palette.tertiary.main}`,
+  background: `${theme.palette.secondary.dark}`,
   borderRadius: "50px",
   display: "flex",
   alignItems: "center",
