@@ -2,17 +2,16 @@ import { Grid2 } from "@mui/material";
 import { ProjectCard } from "../ProjectCard";
 import fieldcamp from "../../assets/fieldcamp.png";
 import {
-  Heading,
   SectionWrapper,
-  Description,
   Grid2Wrapper,
 } from "./index.styles";
+import { Description, Heading } from "../Service/index.styles";
 
 export const Works = () => {
   return (
     <SectionWrapper>
       <Heading>My Latest Work</Heading>
-      <Description>Prefect solution for digital experience</Description>
+      <Description>Obviously I'm a Web Designer. Web Developer with over 7 years of experience. Experienced with all stages of the development.</Description>
 
       <Grid2Wrapper container spacing={2}>
         <Grid2 size={{ xs: 12, md: 6 }}>

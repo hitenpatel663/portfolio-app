@@ -16,11 +16,14 @@ export const Heading = styled(Typography)(({ theme }) => ({
 }));
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(12, 12, 7, 12),
+  padding: theme.spacing(12),
   width: "100%",
-  textAlign: "left",
+  textAlign: "center",
   display: "flex",
   flexDirection: "column",
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: theme.palette.bg.main
 }));
 
 export const Grid2Wrapper = styled(Grid2)(({ theme }) => ({

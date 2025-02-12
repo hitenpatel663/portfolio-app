@@ -5,7 +5,6 @@ import {
   Grid2Wrapper,
   Heading,
   SectionWrapper,
-  Title,
 } from "./index.styles";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import { useTheme } from "@mui/material/styles";
@@ -14,8 +13,7 @@ export const Service = () => {
   const theme = useTheme();
   return (
     <SectionWrapper>
-      <Title>WHAT WE OFFER</Title>
-      <Heading>Affordable Services</Heading>
+      <Heading>What We Offer?</Heading>
       <Description>
         A Private Limited is the most popular type of partnership Malta. The
         limited liability is, in fact, the only type of company allowed by
@@ -27,10 +25,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.purple}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkPurple }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />
@@ -39,10 +36,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.green}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkGreen }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />
@@ -51,10 +47,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.red}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkRed }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />
@@ -63,10 +58,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.yellow}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkYellow }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />
@@ -75,10 +69,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.blue}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkBlue }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />
@@ -87,10 +80,9 @@ export const Service = () => {
           <ServiceCard
             title="Research & Analysis"
             description="We use a customized application specifically designed a testing gnose to keep away for people."
-            color={theme.palette.serviceCard.pink}
             icon={
               <AutorenewIcon
-                style={{ color: theme.palette.serviceCard.darkPink }}
+                style={{ color: theme.palette.secondary.main, height: '40px', width: '40px' }}
               />
             }
           />

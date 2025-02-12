@@ -40,7 +40,7 @@ export const HeroSection = () => {
           <SocialMediaLinks />
           <ButtonWrapper>
           <HireMe>Hire Me</HireMe>
-          <SeeMyWork>See Mey work</SeeMyWork>
+          <SeeMyWork>See My work</SeeMyWork>
           </ButtonWrapper>
         </SectionWrapper>
       </Grid2Container>
