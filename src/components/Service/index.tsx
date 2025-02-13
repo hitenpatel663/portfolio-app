@@ -13,14 +13,14 @@ export const Service = () => {
   const theme = useTheme();
   return (
     <SectionWrapper>
-      <Heading>What We Offer?</Heading>
+      <Heading>What do i offer?</Heading>
       <Description>
         A Private Limited is the most popular type of partnership Malta. The
         limited liability is, in fact, the only type of company allowed by
         Companies.
       </Description>
 
-      <Grid2Wrapper container spacing={2}>
+      <Grid2Wrapper container spacing={4}>
         <Grid2 size={{ xs: 12, md: 4 }}>
           <ServiceCard
             title="Research & Analysis"

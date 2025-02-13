@@ -79,7 +79,7 @@ const theme: Theme = createTheme({
       main: '#161c2d',
     },
     bg: {
-      main: '#f5f6fa',
+      main: '#f9fafb',
       dark: '#574532'
     },
     socialMedia: {
