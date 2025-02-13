@@ -17,6 +17,7 @@ import {
 } from "./index.styles";
 import useIsMobile from "../../hooks/useIsMobile";
 import { HeroHello } from "../HeroSection/index.styles";
+import useScrollTop from "../../common/useScrollAtTop";
 
 const ResponsiveNavbar = ({
   activeSection,
@@ -26,6 +27,7 @@ const ResponsiveNavbar = ({
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const isMobile = useIsMobile();
+  const isAtTop = useScrollTop()
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
@@ -69,12 +71,12 @@ const ResponsiveNavbar = ({
       });
   
       setActiveSection(route)
+      setDrawerOpen(false)
     }
   };
-  
 
   return (
-    <StyledAppBar position="sticky" style={{ padding: "0px 96px", zIndex: 999 }}>
+    <StyledAppBar isAtTop={isAtTop} position="sticky" style={{ padding: "0px 96px", zIndex: 999 }}>
       <Toolbar sx={{ justifyContent: "space-between" }} style={{ padding: 0 }}>
         {isMobile && (
           <HamburgerMenu edge="start" color="inherit" onClick={() => toggleDrawer(true)}>

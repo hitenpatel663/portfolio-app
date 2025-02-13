@@ -7,9 +7,11 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const StyledAppBar = styled(AppBar)(({ theme }) => ({
+export const StyledAppBar = styled(AppBar)<{isAtTop: boolean}>(({ theme, isAtTop }) => ({
   backgroundColor: theme.palette.primary.main,
-  boxShadow: "none",
+  boxShadow: !isAtTop ? `${theme.spacing(0)} ${theme.spacing(0)} ${theme.spacing(
+    1
+  )} ${theme.spacing(0.5)} rgba(0, 0, 0, 0.15)` : "none",
 }));
 
 export const NavLinks = styled(Box)(({ theme }) => ({
