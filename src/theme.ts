@@ -80,7 +80,7 @@ const theme: Theme = createTheme({
     },
     bg: {
       main: '#f5f6fa',
-      
+      dark: '#574532'
     },
     socialMedia: {
       instagram: '#b7347c',

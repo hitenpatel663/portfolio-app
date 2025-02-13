@@ -1,5 +1,3 @@
-import SkillBar from "../Skillbar";
-import WorkExperience from "../WorkExperience";
 import {
   Container,
   Description,

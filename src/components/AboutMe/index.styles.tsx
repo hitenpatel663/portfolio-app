@@ -49,7 +49,6 @@ export const ImgBox = styled(Box)(({ theme }) => ({
   borderRadius: "230px",
   backgroundColor: theme.palette.secondary.main,
   position: "relative",
-  // boxShadow: '0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
 }));
 
 export const Container = styled(Box)(({ theme }) => ({

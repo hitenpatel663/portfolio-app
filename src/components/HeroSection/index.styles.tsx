@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   textAlign: "left",
-  padding: theme.spacing(20, 0, 0, 12),
+  padding: theme.spacing(0, 0, 0, 12),
 }));
 
 export const Grid2Wrapper = styled(Grid2)(({ theme }) => ({
@@ -16,6 +16,8 @@ export const Grid2Container = styled(Grid2)(({ theme }) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
+  justifyContent: 'center',
+  alignItems: 'center',
 }));
 
 export const HeroHello = styled(Typography)(({ theme }) => ({
@@ -63,4 +65,14 @@ export const RightContainerDark = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: -70,
   zIndex: 2,
+}));
+
+export const ImageContainer = styled("img")(({ theme }) => ({
+  width: "400px",
+  height: "400px",
+  zIndex: 99,
+  background: theme.palette.textColor.white,
+  borderRadius: '50%',
+  outline: `12px solid ${theme.palette.secondary.main}`,
+  border: `12px solid ${theme.palette.secondary.light}`,
 }));

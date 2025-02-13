@@ -10,13 +10,10 @@ import {
 } from "./index.styles";
 import EastIcon from "@mui/icons-material/East";
 import {
-  Backdrop,
   Chip,
   Dialog,
   DialogContent,
-  DialogContentText,
   DialogTitle,
-  Modal,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -69,7 +66,7 @@ export const ProjectCard = ({
                   <EastIcon color="primary" />
                 </IconBox>
               </ProjectDetail>
-              <ChipBox>
+              <ChipBox >
                 {skills?.map((skillItem) => (
                   <Chip label={skillItem} />
                 ))}

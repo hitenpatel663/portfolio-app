@@ -8,10 +8,12 @@ import {
   RightContainerDark,
   SectionWrapper,
   ButtonWrapper,
+  ImageContainer,
 } from "./index.styles";
 import TypewriterComponent from "typewriter-effect";
 import SocialMediaLinks from "../SocialMediaLinks";
 import { PrimaryButton, SecondaryButton } from "../../common/common.styles";
+import hiten from '../../assets/hiten.png'
 
 export const HeroSection = () => {
   return (
@@ -42,6 +44,8 @@ export const HeroSection = () => {
       </Grid2Container>
 
       <Grid2Container size={{ xs: 12, md: 6 }}>
+        
+        <ImageContainer src={hiten} />
         <RightContainer />
         <RightContainerDark />
       </Grid2Container>

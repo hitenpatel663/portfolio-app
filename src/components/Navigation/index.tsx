@@ -1,7 +1,12 @@
-import { useState } from 'react';
-import { Toolbar, Typography, Drawer, ListItem, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import { useState } from "react";
+import {
+  Toolbar,
+  Drawer,
+  ListItem,
+  IconButton,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   StyledAppBar,
   NavLinks,
@@ -9,37 +14,90 @@ import {
   DrawerList,
   NavLink,
   DrawerNavLink,
-} from './index.styles';
-import useIsMobile from '../../hooks/useIsMobile';
+} from "./index.styles";
+import useIsMobile from "../../hooks/useIsMobile";
+import { HeroHello } from "../HeroSection/index.styles";
 
-const ResponsiveNavbar: React.FC = () => {
-  const isMobile = useIsMobile(); // Custom hook to determine if it's mobile view
+const ResponsiveNavbar = ({
+  activeSection,
+  setActiveSection,
+}: {
+  activeSection: string;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+  const isMobile = useIsMobile();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
     setDrawerOpen(open);
   };
 
+  const navItems = [
+    {
+      name: "Home",
+      route: "#home",
+    },
+    {
+      name: "About Me",
+      route: "#about-me",
+    },
+    {
+      name: "Service",
+      route: "#service",
+    },
+    {
+      name: "Experience",
+      route: "#experience",
+    },
+    {
+      name: "Projects",
+      route: "#projects",
+    },
+    {
+      name: "Contact Me",
+      route: "#contact-me",
+    },
+  ];
+
+  const handleScrollToSection = (route: string) => {
+    const targetSection = document.getElementById(route);
+  
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.getBoundingClientRect().top + window.pageYOffset - 64,
+        behavior: "smooth",
+      });
+  
+      setActiveSection(route)
+    }
+  };
+  
+
   return (
-    <StyledAppBar position="static">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
+    <StyledAppBar position="sticky" style={{ padding: "0px 96px", zIndex: 999 }}>
+      <Toolbar sx={{ justifyContent: "space-between" }} style={{ padding: 0 }}>
         {isMobile && (
           <HamburgerMenu edge="start" color="inherit" onClick={() => toggleDrawer(true)}>
             <MenuIcon />
           </HamburgerMenu>
         )}
 
-        <Typography variant="h6" component="div">
-          Hiten.
-        </Typography>
+        <HeroHello>Hiten.</HeroHello>
 
         {!isMobile && (
           <NavLinks>
-            <NavLink variant="body1">Home</NavLink>
-            <NavLink variant="body1">About Us</NavLink>
-            <NavLink variant="body1">Service</NavLink>
-            <NavLink variant="body1">Work</NavLink>
-            <NavLink variant="body1">Contact Us</NavLink>
+            {navItems?.map((item) => (
+              <NavLink
+                href={item?.route}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollToSection(item?.route);
+                }}
+                selected={item?.route === activeSection}
+              >
+                {item?.name}
+              </NavLink>
+            ))}
           </NavLinks>
         )}
       </Toolbar>
@@ -50,21 +108,16 @@ const ResponsiveNavbar: React.FC = () => {
             <IconButton onClick={() => toggleDrawer(false)}>
               <CloseIcon />
             </IconButton>
-            <ListItem>
-              <DrawerNavLink variant="body1">Home</DrawerNavLink>
-            </ListItem>
-            <ListItem>
-              <DrawerNavLink variant="body1">About Us</DrawerNavLink>
-            </ListItem>
-            <ListItem>
-              <DrawerNavLink variant="body1">Service</DrawerNavLink>
-            </ListItem>
-            <ListItem>
-              <DrawerNavLink variant="body1">Work</DrawerNavLink>
-            </ListItem>
-            <ListItem>
-              <DrawerNavLink variant="body1">Contact Us</DrawerNavLink>
-            </ListItem>
+            {navItems?.map((item) => (
+              <ListItem key={item?.route}>
+                <DrawerNavLink
+                  onClick={() => handleScrollToSection(item?.route)} // Smooth scroll on click
+                  selected={item?.route === activeSection}
+                >
+                  {item?.name}
+                </DrawerNavLink>
+              </ListItem>
+            ))}
           </DrawerList>
         </Drawer>
       )}
