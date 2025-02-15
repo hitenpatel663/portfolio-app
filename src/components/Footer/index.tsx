@@ -11,7 +11,7 @@ export const Footer = () => {
       <Heading>Hiten.</Heading>
       <Description>
         © 2025 Hiten. Design & Develop with{" "}
-        <FavoriteIcon style={{ color: "red" }} />.
+        <FavoriteIcon style={{ color: "red" }} />
       </Description>
       <SocialMediaLinksWrapper>
         <FacebookIcon style={{ cursor: 'pointer' }} />

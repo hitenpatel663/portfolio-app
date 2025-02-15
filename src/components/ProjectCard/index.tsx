@@ -6,7 +6,6 @@ import {
   Description,
   Grid2Container,
   Grid2Wrapper,
-  IconBox,
   ImageContainer,
   OpenButton,
   OverLay,
