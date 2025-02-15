@@ -55,9 +55,10 @@ export const PrimaryButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const SecondaryButton = styled(Button)(({ theme }) => ({
+export const SecondaryButton = styled(Button)<{ width?: string }>(({ theme, width }) => ({
   color: theme.palette.secondary.main,
   fontWeight: 700,
+  width: width ||'fit-content',
   fontSize: theme.spacing(2),
   padding: theme.spacing(1, 2),
   background: theme.palette.secondary.light,

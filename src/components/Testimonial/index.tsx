@@ -7,6 +7,7 @@ import {
   Heading,
   SectionWrapperWhite,
 } from "../../common/common.styles";
+import { HeaderWrapper } from "./index.styles";
 
 export const Testimonial = () => {
   const options = {
@@ -37,40 +38,46 @@ export const Testimonial = () => {
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       address: "USA",
+      ratting: 4.5,
     },
     {
       name: "Ravi Savage",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       address: "USA",
+      ratting: 4.5,
     },
     {
       name: "Rohith",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       address: "USA",
+      ratting: 5,
     },
     {
       name: "Kevin Canlas",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
       address: "USA",
+      ratting: 4.5,
     },
   ];
   return (
     <SectionWrapperWhite>
+      <HeaderWrapper>
       <Heading>Client's Review</Heading>
       <Description>
         Obviously I'm a Web Designer. Web Developer with over 7 years of
         experience. Experienced with all stages of the development.
       </Description>
-
-      <OwlCarousel className="owl-theme" {...options}>
+      </HeaderWrapper>
+      <OwlCarousel className="owl-theme" {...options} >
         {testiMonials?.map((item) => (
           <TestimonialCard
             designation={item?.address}
             name={item?.name}
             feedback={item?.description}
+            rating={item?.ratting}
           />
         ))}
       </OwlCarousel>

@@ -82,7 +82,7 @@ export const ContactForm = () => {
               error={!isEmpty(props?.errors?.message)}
               helperText={props?.errors?.message}
             />
-            <SecondaryButton onClick={() => props?.submitForm()}>
+            <SecondaryButton onClick={() => props?.submitForm()} width="100%" >
               Submit
             </SecondaryButton>
           </SectionWrapper>

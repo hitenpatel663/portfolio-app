@@ -1,3 +1,4 @@
+import { SecondaryButton } from "../../common/common.styles";
 import {
   Container,
   Description,
@@ -36,6 +37,7 @@ export const AboutMe = () => {
             I'm a professional web designer. My motive is to build a best web
             design with my all years of experience.
           </Description>
+          <SecondaryButton>See work</SecondaryButton>
         </RightContainer>
       </Container>
     </SectionWrapper>

@@ -25,8 +25,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { SecondaryButton } from "../../common/common.styles";
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
-import CloseIcon from '@mui/icons-material/Close';
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import CloseIcon from "@mui/icons-material/Close";
 
 export const ProjectCard = ({
   imgUrl,
@@ -54,7 +54,7 @@ export const ProjectCard = ({
   return (
     <CardBox>
       <ImageContainer src={imgUrl} clickable />
-      <OverLay className="overlay" onClick={handleClickOpen} >
+      <OverLay className="overlay" onClick={handleClickOpen}>
         <OpenButton>
           <CameraAltOutlinedIcon />
         </OpenButton>
@@ -69,23 +69,23 @@ export const ProjectCard = ({
         <DialogTitle id="responsive-dialog-title">
           <Title>{title}</Title>
           <IconButton
-          aria-label="close"
-          onClick={handleClose}
-          sx={(theme) => ({
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: theme.palette.grey[500],
-          })}
-        >
-          <CloseIcon />
-        </IconButton>
+            aria-label="close"
+            onClick={handleClose}
+            sx={(theme) => ({
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: theme.palette.grey[500],
+            })}
+          >
+            <CloseIcon />
+          </IconButton>
         </DialogTitle>
         <DialogContent>
           <Card>
             <Grid2Wrapper container spacing={2}>
               <Grid2Container size={{ xs: 12, md: 7 }}>
-              <ImageContainer src={imgUrl} />
+                <ImageContainer src={imgUrl} />
               </Grid2Container>
               <Grid2Container size={{ xs: 12, md: 5 }}>
                 <BottomBox>
