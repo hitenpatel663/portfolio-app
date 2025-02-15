@@ -1,10 +1,15 @@
 import {
   BottomBox,
   Card,
+  CardBox,
   ChipBox,
   Description,
+  Grid2Container,
+  Grid2Wrapper,
   IconBox,
   ImageContainer,
+  OpenButton,
+  OverLay,
   ProjectDetail,
   Title,
 } from "./index.styles";
@@ -14,10 +19,14 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
+  IconButton,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
+import { SecondaryButton } from "../../common/common.styles";
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const ProjectCard = ({
   imgUrl,
@@ -41,40 +50,64 @@ export const ProjectCard = ({
   const handleClose = () => {
     setOpen(false);
   };
-  return (
-    <>
-      <ImageContainer src={imgUrl} onClick={handleClickOpen} />
 
+  return (
+    <CardBox>
+      <ImageContainer src={imgUrl} clickable />
+      <OverLay className="overlay" onClick={handleClickOpen} >
+        <OpenButton>
+          <CameraAltOutlinedIcon />
+        </OpenButton>
+      </OverLay>
       <Dialog
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
-        maxWidth={'lg'}
+        maxWidth={"lg"}
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-        <Title>{title}</Title>
+          <Title>{title}</Title>
+          <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={(theme) => ({
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: theme.palette.grey[500],
+          })}
+        >
+          <CloseIcon />
+        </IconButton>
         </DialogTitle>
         <DialogContent>
           <Card>
-            <ImageContainer src={imgUrl} onClick={handleClickOpen} />
-            <BottomBox>
-              <Title>{title}</Title>
-              <ProjectDetail>
-                <Description>{description}</Description>
-                <IconBox>
-                  <EastIcon color="primary" />
-                </IconBox>
-              </ProjectDetail>
-              <ChipBox >
-                {skills?.map((skillItem) => (
-                  <Chip label={skillItem} />
-                ))}
-              </ChipBox>
-            </BottomBox>
+            <Grid2Wrapper container spacing={2}>
+              <Grid2Container size={{ xs: 12, md: 7 }}>
+              <ImageContainer src={imgUrl} />
+              </Grid2Container>
+              <Grid2Container size={{ xs: 12, md: 5 }}>
+                <BottomBox>
+                  <Title>{title}</Title>
+                  <ProjectDetail>
+                    <Description>{description}</Description>
+                  </ProjectDetail>
+                  <ChipBox>
+                    {skills?.map((skillItem) => (
+                      <Chip label={skillItem} />
+                    ))}
+                  </ChipBox>
+                  <SecondaryButton>
+                    View
+                    <EastIcon />
+                  </SecondaryButton>
+                </BottomBox>
+              </Grid2Container>
+            </Grid2Wrapper>
           </Card>
         </DialogContent>
       </Dialog>
-    </>
+    </CardBox>
   );
 };
