@@ -22,6 +22,21 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
   borderBottom: `1px solid ${theme.palette.secondary.main}`,
 }));
 
+export const NameEmailWrapper = styled(Box)(({ theme }) => ({
+  background: theme.palette.primary.main,
+  width: "100%",
+  textAlign: "left",
+  display: "flex",
+  flexDirection: "row",
+  gap: theme.spacing(3.5),
+  'div': {
+    width: '50%',
+  },
+  '& .MuiOutlinedInput-root': {
+    width: '100%',
+  }
+}));
+
 export const Title = styled(Typography)(({ theme }) => ({
   color: theme.palette.secondary.main,
   fontWeight: 600,
@@ -53,12 +68,4 @@ export const TextFieldComp = styled(TextField)(({ theme }) => ({
       borderColor: theme.palette.secondary.main,
     },
   },
-}));
-
-export const SubmitMessageButton = styled(Button)(({ theme }) => ({
-  width: "100%",
-  color: theme.palette.tertiary.main,
-  fontWeight: 600,
-  fontSize: theme.spacing(2),
-  background: theme.palette.secondary.main,
 }));

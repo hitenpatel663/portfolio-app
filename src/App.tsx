@@ -10,6 +10,7 @@ import { Testimonial } from "./components/Testimonial";
 import WorkExperience from "./components/WorkExperience";
 import { Works } from "./components/Works";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [activeSection, setActiveSection] = useState("#home");
@@ -70,6 +71,7 @@ function App() {
       </section>
       <section id={"#contact-me"}>
         <ContactUs />
+      <Footer />
       </section>
       {activeSection !== "#home" && <ScrollToTop />}
     </>

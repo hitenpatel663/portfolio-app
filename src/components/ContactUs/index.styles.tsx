@@ -3,7 +3,7 @@ import { Box, Divider, Grid2, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const Grid2Wrapper = styled(Grid2)(({ theme }) => ({
-  height: "80vh",
+  height: "fit-content",
 }));
 
 export const Grid2Container = styled(Grid2)(({ theme }) => ({
@@ -13,7 +13,7 @@ export const Grid2Container = styled(Grid2)(({ theme }) => ({
 }));
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(12, 12, 7, 12),
+  padding: theme.spacing(8.5, 12, 7, 12),
   width: "100%",
   textAlign: "left",
   display: "flex",

@@ -4,9 +4,9 @@ import { Box } from "@mui/material";
 import {
   Heading,
   SectionWrapper,
-  SubmitMessageButton,
   TextFieldComp,
   Title,
+  NameEmailWrapper,
 } from "./index.styles";
 import { isEmpty } from "lodash";
 import { SecondaryButton } from "../../common/common.styles";
@@ -31,6 +31,7 @@ export const ContactForm = () => {
               <Title>Let's talk</Title>
               <Heading>Enter your project details</Heading>
             </Box>
+            <NameEmailWrapper>
             <TextFieldComp
               id="outlined-required"
               label="Name"
@@ -40,6 +41,7 @@ export const ContactForm = () => {
               onChange={props?.handleChange}
               error={!isEmpty(props?.errors?.name)}
               helperText={props?.errors?.name}
+              fullWidth
             />
             <TextFieldComp
               id="outlined-required"
@@ -50,6 +52,7 @@ export const ContactForm = () => {
               error={!isEmpty(props?.errors?.email)}
               helperText={props?.errors?.email}
             />
+            </NameEmailWrapper>
             <TextFieldComp
               id="outlined-required"
               label="Contact No"
@@ -73,7 +76,7 @@ export const ContactForm = () => {
               name="message"
               multiline
               placeholder="Message"
-              minRows={4}
+              minRows={2}
               value={props?.values?.message}
               onChange={props?.handleChange}
               error={!isEmpty(props?.errors?.message)}
