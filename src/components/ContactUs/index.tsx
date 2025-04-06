@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 import {
   DividerComp,
   Grid2Container,
@@ -10,21 +10,21 @@ import {
   SectionWrapper,
   Title,
   ValueBox,
-} from "./index.styles";
-import CallIcon from "@mui/icons-material/Call";
-import EmailIcon from "@mui/icons-material/Email";
+} from './index.styles';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { ContactForm } from "../ContactForm";
+import { ContactForm } from '../ContactForm';
+import useIsMobile from '../../hooks/useIsMobile';
 
 export const ContactUs = () => {
+  const isMobile = useIsMobile();
   return (
     <Grid2Wrapper container spacing={2}>
       <Grid2Container size={{ xs: 12, md: 5 }}>
-        <SectionWrapper>
+        <SectionWrapper isMobile={isMobile}>
           <Heading>Let's Connect</Heading>
-          <Title>
-            Looking for help? Fill the form and start a new adventure.
-          </Title>
+          <Title>Looking for help? Fill the form and start a new adventure.</Title>
           <DividerComp />
           <SectionGroup>
             <Box>
@@ -52,7 +52,7 @@ export const ContactUs = () => {
         </SectionWrapper>
       </Grid2Container>
       <Grid2Container size={{ xs: 12, md: 7 }}>
-        <SectionWrapper>
+        <SectionWrapper isMobile={isMobile}>
           <ContactForm />
         </SectionWrapper>
       </Grid2Container>

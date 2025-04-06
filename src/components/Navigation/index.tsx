@@ -1,12 +1,7 @@
-import { useState } from "react";
-import {
-  Toolbar,
-  Drawer,
-  ListItem,
-  IconButton,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import { useState } from 'react';
+import { Toolbar, Drawer, ListItem, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
   StyledAppBar,
   NavLinks,
@@ -14,10 +9,10 @@ import {
   DrawerList,
   NavLink,
   DrawerNavLink,
-} from "./index.styles";
-import useIsMobile from "../../hooks/useIsMobile";
-import { HeroHello } from "../HeroSection/index.styles";
-import useScrollTop from "../../common/useScrollAtTop";
+} from './index.styles';
+import useIsMobile from '../../hooks/useIsMobile';
+import { HeroHello } from '../HeroSection/index.styles';
+import useScrollTop from '../../common/useScrollAtTop';
 
 const ResponsiveNavbar = ({
   activeSection,
@@ -27,7 +22,7 @@ const ResponsiveNavbar = ({
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const isMobile = useIsMobile();
-  const isAtTop = useScrollTop()
+  const isAtTop = useScrollTop();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
@@ -36,48 +31,52 @@ const ResponsiveNavbar = ({
 
   const navItems = [
     {
-      name: "Home",
-      route: "#home",
+      name: 'Home',
+      route: '#home',
     },
     {
-      name: "About Me",
-      route: "#about-me",
+      name: 'About Me',
+      route: '#about-me',
     },
     {
-      name: "Service",
-      route: "#service",
+      name: 'Service',
+      route: '#service',
     },
     {
-      name: "Experience",
-      route: "#experience",
+      name: 'Experience',
+      route: '#experience',
     },
     {
-      name: "Projects",
-      route: "#projects",
+      name: 'Projects',
+      route: '#projects',
     },
     {
-      name: "Contact Me",
-      route: "#contact-me",
+      name: 'Contact Me',
+      route: '#contact-me',
     },
   ];
 
   const handleScrollToSection = (route: string) => {
     const targetSection = document.getElementById(route);
-  
+
     if (targetSection) {
       window.scrollTo({
         top: targetSection.getBoundingClientRect().top + window.pageYOffset - 64,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
-  
-      setActiveSection(route)
-      setDrawerOpen(false)
+
+      setActiveSection(route);
+      setDrawerOpen(false);
     }
   };
 
   return (
-    <StyledAppBar isAtTop={isAtTop} position="sticky" style={{ padding: "0px 96px", zIndex: 999 }}>
-      <Toolbar sx={{ justifyContent: "space-between" }} style={{ padding: 0 }}>
+    <StyledAppBar
+      isAtTop={isAtTop}
+      position="sticky"
+      style={{ padding: isMobile ? '0px 24px' : '0px 96px', zIndex: 999 }}
+    >
+      <Toolbar sx={{ justifyContent: 'space-between' }} style={{ padding: 0 }}>
         {isMobile && (
           <HamburgerMenu edge="start" color="inherit" onClick={() => toggleDrawer(true)}>
             <MenuIcon />

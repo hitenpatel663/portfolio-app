@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { LinearProgress } from "@mui/material";
-import { PercentageText, SkillBarContainer, SkillLabel } from "./index.styles";
+import React, { useEffect, useState } from 'react';
+import { LinearProgress } from '@mui/material';
+import { PercentageText, SkillBarContainer, SkillLabel } from './index.styles';
 
 interface SkillBarProps {
   skillName: string;
@@ -35,18 +35,16 @@ const SkillBar: React.FC<SkillBarProps> = ({
     <SkillBarContainer>
       <SkillLabel>{skillName}</SkillLabel>
 
-      <PercentageText progress={animatedProgress}>
-        {animatedProgress}%
-      </PercentageText>
+      <PercentageText progress={animatedProgress}>{animatedProgress}%</PercentageText>
 
       <LinearProgress
         variant="determinate"
         value={animatedProgress}
         sx={{
           height: 10,
-          borderRadius: "5px",
-          backgroundColor: "#e0e0e0",
-          "& .MuiLinearProgress-bar": {
+          borderRadius: '5px',
+          backgroundColor: '#e0e0e0',
+          '& .MuiLinearProgress-bar': {
             backgroundColor: color,
           },
         }}

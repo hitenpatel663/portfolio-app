@@ -1,12 +1,5 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-} from "@mui/material";
+import React from 'react';
+import { Box, Typography, Stepper, Step, StepLabel, StepContent } from '@mui/material';
 import {
   ExperienceWrapper,
   JobDescription,
@@ -14,48 +7,47 @@ import {
   StepBox,
   StepDot,
   Title,
-} from "./index.styles";
-import {
-  Description,
-  Heading,
-  SectionWrapperWhite,
-} from "../../common/common.styles";
+} from './index.styles';
+import { Description, Heading, SectionWrapperWhite } from '../../common/common.styles';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const experiences = [
   {
-    company: "Company A",
-    jobTitle: "Software Engineer",
-    description: "The generated injected humour, or non-characteristic words etc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,    ",
+    company: 'Company A',
+    jobTitle: 'Software Engineer',
+    description:
+      'The generated injected humour, or non-characteristic words etc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,    ',
   },
   {
-    company: "Company B",
-    jobTitle: "Full Stack Developer",
-    description: "Built and maintained APIs and designed scalable databases.",
+    company: 'Company B',
+    jobTitle: 'Full Stack Developer',
+    description: 'Built and maintained APIs and designed scalable databases.',
   },
   {
-    company: "Company C",
-    jobTitle: "Frontend Developer",
-    description: "Worked on the UI/UX of an e-commerce platform.",
+    company: 'Company C',
+    jobTitle: 'Frontend Developer',
+    description: 'Worked on the UI/UX of an e-commerce platform.',
   },
   {
-    company: "Company D",
-    jobTitle: "Frontend Developer",
-    description: "Worked on the UI/UX of an e-commerce platform.",
+    company: 'Company D',
+    jobTitle: 'Frontend Developer',
+    description: 'Worked on the UI/UX of an e-commerce platform.',
   },
 ];
 
 const WorkExperience: React.FC = () => {
+  const isMobile = useIsMobile();
   return (
-    <SectionWrapperWhite>
+    <SectionWrapperWhite isMobile={isMobile}>
       <Heading>Work Experience</Heading>
-      <Description>
-        Obviously I'm a Web Designer. Web Developer with over 7 years of
-        experience. Experienced with all stages of the development.
+      <Description isMobile={isMobile}>
+        Obviously I'm a Web Designer. Web Developer with over 7 years of experience. Experienced
+        with all stages of the development.
       </Description>
       <ExperienceWrapper>
         <Stepper orientation="vertical">
           {experiences.map((exp, index) => (
-            <Step active key={index} rel="left" >
+            <Step active key={index} rel="left">
               <StepLabel
                 StepIconComponent={(props) => (
                   <StepBox {...props}>
@@ -68,9 +60,7 @@ const WorkExperience: React.FC = () => {
               <StepContent>
                 <Box>
                   <JobTitle variant="h6">{exp.jobTitle}</JobTitle>
-                  <JobDescription variant="body1">
-                    {exp.description}
-                  </JobDescription>
+                  <JobDescription variant="body1">{exp.description}</JobDescription>
                 </Box>
               </StepContent>
             </Step>

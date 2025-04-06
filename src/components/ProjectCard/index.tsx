@@ -11,8 +11,8 @@ import {
   OverLay,
   ProjectDetail,
   Title,
-} from "./index.styles";
-import EastIcon from "@mui/icons-material/East";
+} from './index.styles';
+import EastIcon from '@mui/icons-material/East';
 import {
   Chip,
   Dialog,
@@ -21,11 +21,11 @@ import {
   IconButton,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
-import { useState } from "react";
-import { SecondaryButton } from "../../common/common.styles";
-import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
-import CloseIcon from "@mui/icons-material/Close";
+} from '@mui/material';
+import { useState } from 'react';
+import { SecondaryButton } from '../../common/common.styles';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const ProjectCard = ({
   imgUrl,
@@ -40,7 +40,7 @@ export const ProjectCard = ({
 }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -62,7 +62,7 @@ export const ProjectCard = ({
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
-        maxWidth={"lg"}
+        maxWidth={'lg'}
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
@@ -71,7 +71,7 @@ export const ProjectCard = ({
             aria-label="close"
             onClick={handleClose}
             sx={(theme) => ({
-              position: "absolute",
+              position: 'absolute',
               right: 8,
               top: 8,
               color: theme.palette.grey[500],
@@ -92,11 +92,7 @@ export const ProjectCard = ({
                   <ProjectDetail>
                     <Description>{description}</Description>
                   </ProjectDetail>
-                  <ChipBox>
-                    {skills?.map((skillItem) => (
-                      <Chip label={skillItem} />
-                    ))}
-                  </ChipBox>
+                  <ChipBox>{skills?.map((skillItem) => <Chip label={skillItem} />)}</ChipBox>
                   <SecondaryButton>
                     View
                     <EastIcon />

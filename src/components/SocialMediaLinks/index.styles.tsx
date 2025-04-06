@@ -1,20 +1,20 @@
-import { Box, Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    flexDirection: 'row',
-    margin: theme.spacing(3.5,0)
-  }));
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  flexDirection: 'row',
+  margin: theme.spacing(3.5, 0),
+}));
 
 export const SocialButton = styled(Button)(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   margin: theme.spacing(1),
-  textTransform: "none",
+  textTransform: 'none',
   padding: theme.spacing(1),
   borderRadius: '50% 50% 50% 0%',
   fontSize: theme.typography.body1.fontSize,
@@ -22,9 +22,9 @@ export const SocialButton = styled(Button)(({ theme }) => ({
   height: '50px',
   width: '50px',
   minWidth: '50px',
-  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-  "&:hover": {
-    transform: "scale(1.05)",
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  '&:hover': {
+    transform: 'scale(1.05)',
     boxShadow: theme.shadows[3],
   },
 }));

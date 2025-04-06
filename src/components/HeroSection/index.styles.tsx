@@ -1,30 +1,37 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Button, Grid2, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-export const SectionWrapper = styled(Box)(({ theme }) => ({
-  textAlign: "left",
-  padding: theme.spacing(0, 0, 0, 12),
+export const SectionWrapper = styled(Box)<{ isMobile?: boolean }>(({ theme, isMobile }) => ({
+  textAlign: 'left',
+  padding: theme.spacing(0, 0, 0, isMobile ? 2 : 12),
 }));
 
-export const Grid2Wrapper = styled(Grid2)(({ theme }) => ({
-  height: "calc(100vh - 64px)",
+export const Grid2Wrapper = styled(Grid2)<{ isMobile?: boolean }>(({ theme, isMobile }) => ({
+  ...(!isMobile ? { height: 'calc(100vh - 64px)' } : {}),
   background: theme.palette.primary.main,
   zIndex: -1,
 }));
 
-export const Grid2Container = styled(Grid2)(({ theme }) => ({
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
+export const Grid2Container = styled(Grid2)<{ isMobile?: boolean }>(({ theme, isMobile }) => ({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  ...(isMobile
+    ? {
+        justifyContent: 'start',
+        padding: theme.spacing(5, 0),
+        height: 'auto',
+      }
+    : {}),
 }));
 
 export const HeroHello = styled(Typography)(({ theme }) => ({
   color: theme.palette.tertiary.main,
   fontWeight: 700,
   fontSize: theme.spacing(4),
-  fontFamily: 'Poppins,sans-serif'
+  fontFamily: 'Poppins,sans-serif',
 }));
 
 export const MeName = styled(Typography)(({ theme }) => ({
@@ -43,22 +50,22 @@ export const Description = styled(Typography)(({ theme }) => ({
 export const ButtonWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   gap: theme.spacing(2),
- }))
+}));
 
 export const RightContainer = styled(Box)(({ theme }) => ({
-  width: "550px",
-  height: "calc(100% + 70px)",
+  width: '550px',
+  height: 'calc(100% + 70px)',
   background: theme.palette.secondary.light,
   clipPath: 'polygon(75% 0, 100% 0, 100% 100%, 0% 100%)',
   right: 0,
   position: 'absolute',
-  top: -70,  
+  top: -70,
   zIndex: 1,
 }));
 
 export const RightContainerDark = styled(Box)(({ theme }) => ({
-  width: "400px",
-  height: "calc(100% + 70px)",
+  width: '400px',
+  height: 'calc(100% + 70px)',
   background: theme.palette.secondary.main,
   clipPath: 'polygon(100% 0%, 0% 100%, 100% 100%)',
   right: 0,
@@ -67,9 +74,9 @@ export const RightContainerDark = styled(Box)(({ theme }) => ({
   zIndex: 2,
 }));
 
-export const ImageContainer = styled("img")(({ theme }) => ({
-  width: "400px",
-  height: "400px",
+export const ImageContainer = styled('img')(({ theme }) => ({
+  width: '400px',
+  height: '400px',
   zIndex: 99,
   background: theme.palette.textColor.white,
   borderRadius: '50%',

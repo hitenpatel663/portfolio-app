@@ -1,12 +1,5 @@
-import { Rating, useTheme } from "@mui/material";
-import {
-  Card,
-  Description,
-  DividerComp,
-  Heading,
-  Title,
-  QuoteIcon,
-} from "./index.styles";
+import { Rating, useTheme } from '@mui/material';
+import { Card, Description, DividerComp, Heading, Title, QuoteIcon } from './index.styles';
 export const TestimonialCard = ({
   feedback,
   name,

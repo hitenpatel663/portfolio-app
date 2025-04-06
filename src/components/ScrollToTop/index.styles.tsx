@@ -1,6 +1,6 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button } from '@mui/material';
 
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 export const ArrowButton = styled(Button)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -9,13 +9,13 @@ export const ArrowButton = styled(Button)(({ theme }) => ({
   minWidth: theme.spacing(5),
   cursor: 'pointer',
   borderRadius: '50%',
-  textAlign: "center",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
+  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
   background: theme.palette.secondary.light,
-  position: "fixed",
+  position: 'fixed',
   bottom: 15,
   right: 20,
   backgroundColor: theme.palette.secondary.light,

@@ -1,15 +1,13 @@
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import { TestimonialCard } from "../TestimonialCard";
-import {
-  Description,
-  Heading,
-  SectionWrapperWhite,
-} from "../../common/common.styles";
-import { HeaderWrapper } from "./index.styles";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { TestimonialCard } from '../TestimonialCard';
+import { Description, Heading, SectionWrapperWhite } from '../../common/common.styles';
+import { HeaderWrapper } from './index.styles';
+import useIsMobile from '../../hooks/useIsMobile';
 
 export const Testimonial = () => {
+  const isMobile = useIsMobile();
   const options = {
     loop: true,
     center: true,
@@ -34,44 +32,44 @@ export const Testimonial = () => {
   };
   const testiMonials = [
     {
-      name: "Inba",
+      name: 'Inba',
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
-      address: "USA",
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+      address: 'USA',
       ratting: 4.5,
     },
     {
-      name: "Ravi Savage",
+      name: 'Ravi Savage',
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
-      address: "USA",
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+      address: 'USA',
       ratting: 4.5,
     },
     {
-      name: "Rohith",
+      name: 'Rohith',
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
-      address: "USA",
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+      address: 'USA',
       ratting: 5,
     },
     {
-      name: "Kevin Canlas",
+      name: 'Kevin Canlas',
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.",
-      address: "USA",
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+      address: 'USA',
       ratting: 4.5,
     },
   ];
   return (
-    <SectionWrapperWhite>
+    <SectionWrapperWhite isMobile={isMobile}>
       <HeaderWrapper>
-      <Heading>Client's Review</Heading>
-      <Description>
-        Obviously I'm a Web Designer. Web Developer with over 7 years of
-        experience. Experienced with all stages of the development.
-      </Description>
+        <Heading>Client's Review</Heading>
+        <Description isMobile={isMobile}>
+          Obviously I'm a Web Designer. Web Developer with over 7 years of experience. Experienced
+          with all stages of the development.
+        </Description>
       </HeaderWrapper>
-      <OwlCarousel className="owl-theme" {...options} >
+      <OwlCarousel className="owl-theme" {...options}>
         {testiMonials?.map((item) => (
           <TestimonialCard
             designation={item?.address}

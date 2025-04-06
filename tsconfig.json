@@ -6,10 +6,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "strict": true,
+    "strict": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { AboutMe } from "./components/AboutMe";
-import { ContactUs } from "./components/ContactUs";
-import { HeroSection } from "./components/HeroSection";
-import { HireMe } from "./components/HireMe";
-import Navigation from "./components/Navigation";
-import { Service } from "./components/Service";
-import { Testimonial } from "./components/Testimonial";
-import WorkExperience from "./components/WorkExperience";
-import { Works } from "./components/Works";
-import { ScrollToTop } from "./components/ScrollToTop";
-import { Footer } from "./components/Footer";
+import { useEffect, useState } from 'react';
+import './App.css';
+import { AboutMe } from './components/AboutMe';
+import { ContactUs } from './components/ContactUs';
+import { HeroSection } from './components/HeroSection';
+import { HireMe } from './components/HireMe';
+import Navigation from './components/Navigation';
+import { Service } from './components/Service';
+import { Testimonial } from './components/Testimonial';
+import WorkExperience from './components/WorkExperience';
+import { Works } from './components/Works';
+import { ScrollToTop } from './components/ScrollToTop';
+import { Footer } from './components/Footer';
 
 function App() {
-  const [activeSection, setActiveSection] = useState("#home");
+  const [activeSection, setActiveSection] = useState('#home');
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll('section');
     console.log({ sections });
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,7 +28,7 @@ function App() {
         });
       },
       {
-        rootMargin: "0px",
+        rootMargin: '0px',
         threshold: 0.5,
       }
     );
@@ -44,36 +44,33 @@ function App() {
 
   return (
     <>
-      <Navigation
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
-      <section id={"#home"}>
+      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <section id={'#home'}>
         <HeroSection />
       </section>
-      <section id={"#about-me"}>
+      <section id={'#about-me'}>
         <AboutMe />
       </section>
-      <section id={"#service"}>
+      <section id={'#service'}>
         <Service />
       </section>
-      <section id={"#experience"}>
+      <section id={'#experience'}>
         <WorkExperience />
       </section>
-      <section id={"#projects"}>
+      <section id={'#projects'}>
         <Works />
       </section>
-      <section id={"#testimonial"}>
+      <section id={'#testimonial'}>
         <Testimonial />
       </section>
-      <section id={"#hire-me"}>
+      <section id={'#hire-me'}>
         <HireMe />
       </section>
-      <section id={"#contact-me"}>
+      <section id={'#contact-me'}>
         <ContactUs />
-      <Footer />
+        <Footer />
       </section>
-      {activeSection !== "#home" && <ScrollToTop />}
+      {activeSection !== '#home' && <ScrollToTop />}
     </>
   );
 }

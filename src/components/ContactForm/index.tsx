@@ -1,25 +1,21 @@
-import { Form, Formik } from "formik";
-import { ContactFormSchema } from "./validation";
-import { Box } from "@mui/material";
-import {
-  Heading,
-  SectionWrapper,
-  TextFieldComp,
-  Title,
-  NameEmailWrapper,
-} from "./index.styles";
-import { isEmpty } from "lodash";
-import { SecondaryButton } from "../../common/common.styles";
+import { Form, Formik } from 'formik';
+import { ContactFormSchema } from './validation';
+import { Box } from '@mui/material';
+import { Heading, SectionWrapper, TextFieldComp, Title, NameEmailWrapper } from './index.styles';
+import { isEmpty } from 'lodash';
+import { SecondaryButton } from '../../common/common.styles';
+import useIsMobile from '../../hooks/useIsMobile';
 
 export const ContactForm = () => {
+  const isMobile = useIsMobile();
   return (
     <Formik
       initialValues={{
-        name: "",
-        email: "",
-        contactNo: "",
-        subject: "",
-        message: "",
+        name: '',
+        email: '',
+        contactNo: '',
+        subject: '',
+        message: '',
       }}
       validationSchema={ContactFormSchema}
       onSubmit={(values) => void 0}
@@ -31,27 +27,27 @@ export const ContactForm = () => {
               <Title>Let's talk</Title>
               <Heading>Enter your project details</Heading>
             </Box>
-            <NameEmailWrapper>
-            <TextFieldComp
-              id="outlined-required"
-              label="Name"
-              key="name"
-              name="name"
-              value={props?.values?.name}
-              onChange={props?.handleChange}
-              error={!isEmpty(props?.errors?.name)}
-              helperText={props?.errors?.name}
-              fullWidth
-            />
-            <TextFieldComp
-              id="outlined-required"
-              label="Email"
-              name="email"
-              value={props?.values?.email}
-              onChange={props?.handleChange}
-              error={!isEmpty(props?.errors?.email)}
-              helperText={props?.errors?.email}
-            />
+            <NameEmailWrapper isMobile={isMobile}>
+              <TextFieldComp
+                id="outlined-required"
+                label="Name"
+                key="name"
+                name="name"
+                value={props?.values?.name}
+                onChange={props?.handleChange}
+                error={!isEmpty(props?.errors?.name)}
+                helperText={props?.errors?.name}
+                fullWidth
+              />
+              <TextFieldComp
+                id="outlined-required"
+                label="Email"
+                name="email"
+                value={props?.values?.email}
+                onChange={props?.handleChange}
+                error={!isEmpty(props?.errors?.email)}
+                helperText={props?.errors?.email}
+              />
             </NameEmailWrapper>
             <TextFieldComp
               id="outlined-required"
@@ -82,7 +78,7 @@ export const ContactForm = () => {
               error={!isEmpty(props?.errors?.message)}
               helperText={props?.errors?.message}
             />
-            <SecondaryButton onClick={() => props?.submitForm()} width="100%" >
+            <SecondaryButton onClick={() => props?.submitForm()} width="100%">
               Submit
             </SecondaryButton>
           </SectionWrapper>

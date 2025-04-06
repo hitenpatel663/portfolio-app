@@ -1,4 +1,4 @@
-import { Card, Description, IconBox, Title } from "./index.styles";
+import { Card, Description, IconBox, Title } from './index.styles';
 export const ServiceCard = ({
   icon,
   title,

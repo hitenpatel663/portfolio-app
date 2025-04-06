@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const HeaderWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -7,5 +7,5 @@ export const HeaderWrapper = styled(Box)(({ theme }) => ({
   margin: theme.spacing(5, 0),
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 }));
